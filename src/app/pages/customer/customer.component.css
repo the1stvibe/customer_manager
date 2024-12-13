@@ -1,0 +1,73 @@
+.app-toolbar {
+  background: #69F0AE;
+  color: #1e1e1e;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-container {
+  background: #2c2c2c;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.add-button {
+  background-color: #1e1e1e !important;
+  color: #69F0AE;
+}
+
+.customer-table {
+  width: 100%;
+  background: transparent;
+  margin-top: 0;
+}
+
+::ng-deep .mat-table {
+  background: #2c2c2c !important;
+}
+
+::ng-deep .mat-header-cell {
+  color: #69F0AE !important;
+  font-size: 14px;
+  font-weight: 500;
+  background: #1e1e1e;
+}
+
+::ng-deep .mat-cell {
+  color: white !important;
+  border-bottom: 1px solid rgba(105, 240, 174, 0.1) !important;
+}
+
+::ng-deep .mat-row:hover {
+  background: rgba(105, 240, 174, 0.05);
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px;
+}
+
+.edit-button {
+  color: #69F0AE;
+}
+
+.delete-button {
+  color: #ff4444;
+}
+
+::ng-deep .mat-paginator {
+  background: transparent !important;
+  color: white !important;
+}
+
+::ng-deep .mat-row {
+  transition: background 0.3s ease;
+}
+

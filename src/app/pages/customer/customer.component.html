@@ -1,0 +1,64 @@
+<mat-toolbar class="app-toolbar">
+  <span>Customer Manager</span>
+  <span class="example-spacer"></span>
+  <div class="example-button-container">
+    <a mat-fab extended routerLink="/createcustomer" class="add-button">
+      <mat-icon>add</mat-icon>
+      Customer
+    </a>
+  </div>
+</mat-toolbar>
+
+<div class="main-container">
+  <app-search-customer (searchChange)="onSearch($event)"></app-search-customer>
+
+  <div class="loading-spinner" *ngIf="isLoading">
+    <mat-spinner diameter="40" color="accent"></mat-spinner>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="customer-table" *ngIf="!isLoading">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef> Phone </th>
+      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Username </th>
+      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button class="edit-button" (click)="editCustomer(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button class="delete-button" (click)="deleteCustomer(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+
+
+

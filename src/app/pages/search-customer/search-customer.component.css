@@ -1,0 +1,36 @@
+.search-container {
+  padding: 16px 24px;
+  background: #1e1e1e;
+}
+
+.search-field {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+}
+
+::ng-deep .mat-form-field-outline {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::ng-deep .mat-form-field-label {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+::ng-deep .mat-input-element {
+  color: white !important;
+}
+
+::ng-deep .mat-form-field-outline-thick {
+  color: #69F0AE !important;
+}
+
+mat-icon {
+  color: #69F0AE;
+}
+
+::ng-deep .mat-form-field-prefix {
+  margin-right: 8px;
+  color: #69F0AE;
+}

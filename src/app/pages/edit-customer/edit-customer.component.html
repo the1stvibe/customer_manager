@@ -1,0 +1,54 @@
+<div class="edit-dialog">
+  <div class="dialog-header">
+    <h2>Edit Customer</h2>
+    <button mat-icon-button (click)="onCancel()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <form [formGroup]="editForm" class="edit-form">
+    <div class="form-content">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username">
+        <mat-icon matSuffix>account_circle</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone">
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="male">Male</mat-option>
+          <mat-option value="female">Female</mat-option>
+          <mat-option value="other">Other</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>wc</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="dialog-actions">
+      <button mat-button (click)="onCancel()">Cancel</button>
+      <button mat-raised-button class="update-btn" (click)="onSubmit()">
+        <mat-icon>save</mat-icon>
+        Update Customer
+      </button>
+    </div>
+  </form>
+</div>
